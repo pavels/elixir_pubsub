@@ -20,6 +20,13 @@ defmodule PubSub do
   end
 
   @doc """
+  Starts the server - pass opts.
+  """
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, :ok, opts)
+  end
+
+  @doc """
   Subscribes a process to the given topic.
 
   ## Example
